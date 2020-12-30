@@ -202,8 +202,8 @@ function loop() {
 	// increase the hue to get different colored fireworks over time
 	//hue += 0.5;
   
-  // create random color
-  hue= random(0, 360 );
+	// create random color
+	hue= random(0, 360 );
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
@@ -234,7 +234,7 @@ function loop() {
 	if( timerTick >= timerTotal ) {
 		if( !mousedown ) {
 			// start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
-			fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+			fireworks.push( new Firework( cw / 2, ch, random(cw * 0.2, cw * 0.8), random( ch * 0.1, ch / 1.5 ) ) );
 			timerTick = 0;
 		}
 	} else {

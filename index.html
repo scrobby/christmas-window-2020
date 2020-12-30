@@ -9,10 +9,13 @@
 <style>
 body {
 	overflow: hidden;
+	transition: background-color .5s;
 }
 
 #txt {
 	top: 0em;
+	opacity: 1;
+	transition: opacity .5s;
 }
 
 </style>
@@ -31,15 +34,19 @@ function autoRefresh(t) {
 function startTime() {
 	let today = new Date();
 	
-	let twenty21 = new Date("December 30 2020 11:57:00");
+	let twenty21 = new Date("December 30 2020 14:31:00");
 	//let twenty21 = new Date("January 01 2021 00:00:00");
 
 	console.log("date: " + twenty21);
 
 	let diff = Math.floor((twenty21 - today)/1000);
 
-	if (diff <= 0) {
-		location.replace("http://localhost:8000/fireworks/");
+	if (diff <= 1) {
+		document.querySelector('body').style.backgroundColor = 'black';
+		document.querySelector('#txt').style.opacity = 0;
+		setTimeout(() => {
+			location.replace("http://localhost:8000/fireworks/");
+		}, 500);
 	}
 
 	console.log(diff);
@@ -96,7 +103,7 @@ function secondsToDHMS (i) {
 
 <body onload="pageSetup()">
 
-	<div id="txt" style="padding-top: 10em;">
+	<div id="txt" style="padding-top: 14em;">
 	</div>
 
 </body>
