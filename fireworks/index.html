@@ -1,0 +1,44 @@
+<html>
+	<head>
+
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
+		<style>
+			/* basic styles for black background and crosshair cursor */
+			body {
+				background: #000;
+				margin: 0;
+				color: white;
+				font-family: 'Balsamiq Sans', sans-serif;
+			}
+
+			#inFrontDiv {
+				position: absolute;
+				height: 220px;
+				width: 800px;
+				top: 50%;
+				left: 50%;
+				margin-top: -110px;
+				margin-left: -400px;
+				font-size: 100px;
+				text-align: center;
+				opacity: 50%;
+			}
+
+			#inFrontDiv span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			canvas {
+				cursor: crosshair;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas">Canvas is not supported in your browser.</canvas>
+		<div id="inFrontDiv"><span>HAPPY NEW</br> YEAR!</span></div>
+		<script src="./script.js"></script>
+	</body>
+</html>
+
